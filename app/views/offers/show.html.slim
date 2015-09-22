@@ -1,0 +1,9 @@
+h1 Offer#show
+
+p Find me in app/views/offers/show.html.erb
+
+= link_to 'All offers', root_path
+div class='comments'
+  = render @offer.comments
+
+= render 'comments/form'

@@ -1,0 +1,9 @@
+= form_for [@offer, Comment.new], remote: true, html: {role: 'form', id: 'new_comment_form'} do |f|
+  = f.hidden_field :offer_id, value: params[:offer_id]
+  span New comment
+  = f.label :author, 'Author'
+  = f.text_field :author
+  = f.label :text, 'Comment text'
+  = f.text_area :text
+  = f.submit 'Add comment'
+

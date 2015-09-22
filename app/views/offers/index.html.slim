@@ -1,0 +1,13 @@
+h1 Offer#index
+
+p Find me in app/views/offers/index.html.erb
+
+= link_to 'New offer', new_offer_path
+
+ul
+  - @offers.each do |offer|
+    li
+      h2
+        = offer.title
+
+    = link_to 'Show', offer_path(offer)
