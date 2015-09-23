@@ -1,9 +1,23 @@
-= form_for [@offer, Comment.new], remote: true, html: {role: 'form', id: 'new_comment_form'} do |f|
+= form_for [@offer, Comment.new], remote: true, html: {role: 'form', id: 'new_comment_form', class: 'form-horizontal'} do |f|
   = f.hidden_field :offer_id, value: params[:offer_id]
-  span New comment
-  = f.label :author, 'Author'
-  = f.text_field :author
-  = f.label :text, 'Comment text'
-  = f.text_area :text
-  = f.submit 'Add comment'
+
+  div class='form-group'
+    div class='col-sm-offset-2 col-sm-10'
+      h3 Новый коментарий
+
+  div class='form-group'
+    = f.label :author, 'Автор', class: 'col-sm-2 control-label'
+
+    div class='col-sm-10'
+      = f.text_field :author, class: 'form-control'
+
+  div class='form-group'
+    = f.label :text, 'Коментарий:', class: 'col-sm-2 control-label'
+
+    div class='col-sm-10'
+      = f.text_area :text, class: 'form-control', placeholder: 'Введите коментарий...'
+
+  div class='form-group'
+    div class='col-sm-offset-2 col-sm-10'
+      = f.submit 'Добавить коментарий'
 

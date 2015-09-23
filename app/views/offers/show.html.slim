@@ -1,9 +1,19 @@
-h1 Offer#show
+div class='offer_show_page_wrap'
+  div class='row'
+    div class='col-sm-9'
+      h1 = @offer.title
 
-p Find me in app/views/offers/show.html.erb
+      span class='offer_show_author' Автор: #{@offer.author}
 
-= link_to 'All offers', root_path
-div class='comments'
-  = render @offer.comments
+      div
+        h5 Описание:
 
-= render 'comments/form'
+        p class='offer_description' = @offer.description
+
+    div class='col-sm-3'
+      = link_to 'Все предложения', root_path, class: 'btn btn-primary btn-bg pull-right btn_margin_top'
+
+  ul class='comments list-unstyled'
+    = render @offer.comments
+
+  = render 'comments/form'

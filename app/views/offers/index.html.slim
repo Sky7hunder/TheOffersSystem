@@ -1,13 +1,13 @@
-h1 Offer#index
+div class='offers_page_header_wrap'
+  h1 Все предложения
 
-p Find me in app/views/offers/index.html.erb
+  = link_to 'Новое предложение', new_offer_path, class: 'new_offer_button btn btn-primary btn-bg pull-right'
 
-= link_to 'New offer', new_offer_path
+div
+  ul class='offers_list list-unstyled'
+    - @offers.each do |offer|
+      li
+        h2
+          = offer.title
 
-ul
-  - @offers.each do |offer|
-    li
-      h2
-        = offer.title
-
-    = link_to 'Show', offer_path(offer)
+        = link_to 'Показать', offer_path(offer), class: 'btn btn-primary btn-bg pull-right offer-show'

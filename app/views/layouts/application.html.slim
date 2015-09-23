@@ -1,4 +1,4 @@
-DOCTYPE html
+doctype html
 html
   head
     title TheOffersSystem
@@ -6,6 +6,8 @@ html
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags
 
-  body
+  body role='document' cz-shortcut-listen='true'
+    = render 'layouts/header'
 
-    == yield
+    div id='main' class='container theme-showcase' role='main'
+      == yield
