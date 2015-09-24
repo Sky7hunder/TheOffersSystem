@@ -5,9 +5,4 @@ div class='offers_page_header_wrap'
 
 div
   ul class='offers_list list-unstyled'
-    - @offers.each do |offer|
-      li
-        h2
-          = offer.title
-
-        = link_to 'Показать', offer_path(offer), class: 'btn btn-primary btn-bg pull-right offer-show'
+    = render @offers

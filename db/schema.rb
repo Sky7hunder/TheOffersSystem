@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921220022) do
+ActiveRecord::Schema.define(version: 20150924000243) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "author",     null: false
     t.text     "text",       null: false
     t.integer  "offer_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offer_tags", force: :cascade do |t|
+    t.integer  "offer_id"
+    t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +34,12 @@ ActiveRecord::Schema.define(version: 20150921220022) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

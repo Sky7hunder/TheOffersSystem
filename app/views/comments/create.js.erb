@@ -1,1 +1,2 @@
-$('.comments').append('<%= render partial: 'comment', locals: {comment: @comment} %>');
+$('.comments').append('<%= j render partial: 'comment', locals: {comment: @comment} %>');
+$(':input','#new_comment_form').not(':button, :submit, :reset, :hidden').val('');

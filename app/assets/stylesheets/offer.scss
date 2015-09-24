@@ -37,6 +37,14 @@
       padding: 10px;
       border-radius: 6px;
     }
+    .tag_list{
+      li{
+        a{
+          background-color: rgb(51, 122, 183);
+          color: white;
+        }
+      }
+    }
   }
   .offer_show_author{
     color: gray;

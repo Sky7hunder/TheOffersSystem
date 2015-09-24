@@ -2,7 +2,11 @@ class OffersController < ApplicationController
   before_action :set_offer, only: :show
 
   def index
-    @offers = Offer.all
+    if params[:tag].present?
+      @offers = Offer.tagged_with(params[:tag])
+    else
+      @offers = Offer.all
+    end
   end
 
   def show
@@ -32,6 +36,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:author, :title, :description)
+    params.require(:offer).permit(:all_tags, :author, :title, :description)
   end
 end

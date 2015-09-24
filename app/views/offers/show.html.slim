@@ -10,6 +10,14 @@ div class='offer_show_page_wrap'
 
         p class='offer_description' = @offer.description
 
+      div
+        span class='pull-left' Теги:
+
+        ul class='list-unstyled list-inline tag_list'
+          - @offer.tags.each do |tag|
+            li
+              == link_to tag.name, offers_path(tag: tag), class: 'btn-sm'
+
     div class='col-sm-3'
       = link_to 'Все предложения', root_path, class: 'btn btn-primary btn-bg pull-right btn_margin_top'
 
